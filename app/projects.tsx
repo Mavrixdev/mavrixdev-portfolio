@@ -6,6 +6,7 @@ import { FaCodeBranch, FaGithub, FaStar } from "react-icons/fa"
 import { getRepos } from "../utils/github"
 
 export default function Projects() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [repos, setRepos] = useState<any[]>([])
 
   useEffect(() => {
