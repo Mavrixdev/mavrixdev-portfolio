@@ -5,9 +5,14 @@ import { useEffect, useState } from "react"
 import { FaCodeBranch, FaGithub, FaStar } from "react-icons/fa"
 import { getRepos } from "../utils/github"
 
+interface Repo {
+  name: string;
+  html_url: string;
+  description?: string;
+}
+
 export default function Projects() {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [repos, setRepos] = useState<any[]>([])
+  const [repos, setRepos] = useState<Repo[]>([])
 
   useEffect(() => {
     getRepos("mavrixdev").then(setRepos)
@@ -17,7 +22,6 @@ export default function Projects() {
     <section id="projects" className="py-20">
       <h2 className="text-3xl font-bold text-center mb-10">Projects 🚀</h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         {repos.map((repo: any, i: number) => (
           <motion.a
             href={repo.html_url}
