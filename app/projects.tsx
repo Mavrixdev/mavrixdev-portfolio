@@ -6,9 +6,12 @@ import { FaCodeBranch, FaGithub, FaStar } from "react-icons/fa"
 import { getRepos } from "../utils/github"
 
 interface Repo {
-  name: string;
-  html_url: string;
-  description?: string;
+  id: number
+  name: string
+  html_url: string
+  description?: string
+  stargazers_count: number
+  forks_count: number
 }
 
 export default function Projects() {
